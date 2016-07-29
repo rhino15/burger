@@ -32,11 +32,8 @@ var orm = {
 		queryString += ' (';
 		queryString += col.toString();
 		queryString += ') ';
-		queryString += 'VALUES (';
-		queryString += '?';
-		queryString += ') ';
+		queryString += 'VALUES (?) ';
 		
-		console.log(queryString);
 		connection.query(queryString, [vals], function(err, results) {
 			if (err) throw err;
 			cb(results);
@@ -45,7 +42,7 @@ var orm = {
 
 	updateOne: function(table, objColVals, condition, cb) {
 		var queryString = 'UPDATE ' + table;
-		queryString += 'SET ';
+		queryString += ' SET ';
 		queryString += objToSql(objColVals);
 		queryString += ' WHERE ';
 		queryString += condition;

@@ -9,27 +9,25 @@ router.get('/', function(req, res) {
 });
 
 router.get('/burgers', function(req, res) {
-	console.log("I'm here");
-	console.log(burger);
 	burger.selectAll(function(data) {
 		var hbsObject = {burgers: data};
-		console.log(hbsObject);
 		res.render('index', hbsObject);
 	});
 });
 
-router.post('/insertBurgers', function(req, res) {
+router.post('/burgers/insertBurgers', function(req, res) {
 	burger.insertOne('burger_name', req.body.burger_name, function(data) {
 		res.redirect('/burgers');
 	});
 });
 
 router.put('/burgers/update/:id', function(req, res) {
-	var condition = 'id = ' + req.body.id;
+	console.log('req.params.id: ' + req.params.id);
+	var condition = 'id = ' + req.params.id;
 
 	console.log(condition);
 
-	burger.updateOne({'devoured': req.body.devoured}, condition, function(data) {
+	burger.updateOne({'devoured' : 1}, condition, function(data) {
 		res.redirect('/burgers');
 	});
 });
