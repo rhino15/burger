@@ -1,0 +1,29 @@
+body {
+	 background: url(../../assets/img/bob_background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@font-face {
+	font-family: "bob";
+	src: url('../img/bob.ttf') format("truetype");
+}
+
+.headline {
+	font-family: 'bob';
+	font-size: 450%;
+	color: #D91B09;
+	background-color: #F3E94E;
+	border: #D91B09 solid 5px;
+	font-weight: bold;
+}
+
+.order {
+	font-size: 300%;
+}
+
+.form {
+	font-size: 200%;
+}

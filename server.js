@@ -1,10 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var favicon = require('serve-favicon');
+var path = require('path');
 
 var app = express();
 
 app.use(express.static(process.cwd() + '/public'));
+//app.use(favicon(path.join(__dirname, 'public','assets','img','favicon.ico')));
+app.use(favicon(__dirname + '/public/assets/img/favicon.ico')); 
+
 
 app.use(bodyParser.urlencoded({
 	extended: false
