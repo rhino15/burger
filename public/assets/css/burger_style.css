@@ -27,3 +27,11 @@ body {
 .form {
 	font-size: 200%;
 }
+
+.menu {
+	font-size: 175%;
+}
+
+li {
+	list-style-type: none;
+}
