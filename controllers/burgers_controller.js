@@ -22,10 +22,17 @@ router.post('/burgers/insertBurgers', function(req, res) {
 });
 
 router.put('/burgers/update/:id', function(req, res) {
-	console.log('req.params.id: ' + req.params.id);
 	var condition = 'id = ' + req.params.id;
 
 	burger.updateOne({'devoured' : 1}, condition, function(data) {
+		res.redirect('/burgers');
+	});
+});
+
+router.delete('/burgers/delete/:id', function(req, res) {
+	var condition = 'id = ' + req.params.id;
+	
+	burger.deleteOne(condition, function(data) {
 		res.redirect('/burgers');
 	});
 });
